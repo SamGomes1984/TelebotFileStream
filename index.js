@@ -9,7 +9,7 @@ const WASABI_SECRET_KEY = process.env.WASABI_SECRET_KEY;
 const WASABI_BUCKET_NAME = process.env.WASABI_BUCKET_NAME;
 const WASABI_REGION = process.env.WASABI_REGION;
 const WASABI_ENDPOINT = `https://s3.${WASABI_REGION}.wasabisys.com`;
-const VERCEL_DOMAIN = "https://telefilebot.vercel.app"; // Change to your actual Vercel domain
+const RENDER_DOMAIN = "https://telebotfilestream.onrender.com"; // Change to your actual Vercel domain
 
 // Initialize Telegram bot
 const bot = new Telegraf(BOT_TOKEN);
@@ -63,8 +63,8 @@ bot.on("message", async (ctx) => {
         const storedFileName = await uploadToWasabi(response.data, fileName);
 
         // Generate Vercel-based URLs
-        const downloadUrl = `${VERCEL_DOMAIN}/file/${storedFileName}`;
-        const streamUrl = `${VERCEL_DOMAIN}/stream/${storedFileName}`;
+        const downloadUrl = `${RENDER_DOMAIN}/file/${storedFileName}`;
+        const streamUrl = `${RENDER_DOMAIN}/stream/${storedFileName}`;
 
         await ctx.reply(
             `✅ Your file is now available:\n\n📥 **Download**: [Click Here](${downloadUrl})\n▶️ **Stream**: [Watch Online](${streamUrl})`,
