@@ -1,0 +1,15 @@
+{
+  "name": "telefilebot",
+  "version": "1.0.0",
+  "description": "Telegram file streaming bot with Wasabi storage",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "telegraf": "^4.7.0",
+    "axios": "^1.6.0",
+    "dotenv": "^16.0.3",
+    "aws-sdk": "^2.1433.0"
+  }
+}
