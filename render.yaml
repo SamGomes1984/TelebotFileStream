@@ -1,0 +1,18 @@
+services:
+  - name: telefilebot
+    type: web
+    env: node
+    buildCommand: npm install
+    startCommand: node index.js
+    plan: free
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: WASABI_ACCESS_KEY
+        sync: false
+      - key: WASABI_SECRET_KEY
+        sync: false
+      - key: WASABI_BUCKET_NAME
+        sync: false
+      - key: WASABI_REGION
+        sync: false
